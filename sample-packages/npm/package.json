@@ -1,7 +1,6 @@
 {
   "name": "github-npm-package-registry-exercise",
   "version": "0.0.1",
-  "private": true,
   "description": "test",
   "main": "index.js",
   "author": "shoru-sssssaaaaaa",
