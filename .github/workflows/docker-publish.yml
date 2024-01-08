@@ -1,0 +1,19 @@
+name: Docker image publish
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: docker-login
+        run: echo $GITHUB_TOKEN | docker login ghcr.io -u USERNAME --password-stdin
+      - name: docker-build
+        run: docker build -t exercise-docker -f ./sample-packages/docker/Dockerfile . 
+      - name: docker-push
+        run: |
+          docker tag exercise-docker ghcr.io/shoru-sssssaaaaaa/exercise-docker:latest
+          docker push ghcr.io/shoru-sssssaaaaaa/exercise-docker:latest
