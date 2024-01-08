@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: docker-login
-        run: echo $${{ secrets.CR_TOKEN }} | docker login ghcr.io -u shoru-sssssaaaaaa --password-stdin
+        run: echo ${{ secrets.CR_TOKEN }} | docker login ghcr.io -u shoru-sssssaaaaaa --password-stdin
       - name: docker-build
         run: docker build -t exercise-docker -f ./sample-packages/docker/Dockerfile . 
       - name: docker-push
