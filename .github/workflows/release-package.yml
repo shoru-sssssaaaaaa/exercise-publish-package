@@ -32,7 +32,9 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - name: npm-ci
         working-directory: ./sample-packages/npm
-        run: npm ci
+        run: |
+          npm install
+          npm ci
       - name: npm-publish
         working-directory: ./sample-packages/npm
         run: npm publish
