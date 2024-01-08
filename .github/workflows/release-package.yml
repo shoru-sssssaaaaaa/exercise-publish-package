@@ -14,7 +14,9 @@ jobs:
           node-version: 12
       - name: npm-ci
         working-directory: ./sample-packages/npm
-        run: npm ci
+        run: |
+          npm install
+          npm ci
       - name: npm-test
         working-directory: ./sample-packages/npm
         run: npm test
